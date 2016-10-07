@@ -39,6 +39,7 @@
 
     datapoints.push(datapoints[0]);
     
+    //circles representing ridership
     g.selectAll("circle")
       .data([0, 5000, 10000, 15000, 20000])
       .enter().append("circle")
@@ -70,7 +71,7 @@
       .attr("y", function(d) {
         var a = angleScale(d.day);
         var r = radiusScale(d.entries);
-        return (r + 10) * Math.cos(a) * -1;
+        return (r + 10) * Math.cos(a) * -1; //from classwork
       })
       .attr("font-size", 12)
       .attr("text-anchor", "middle")
