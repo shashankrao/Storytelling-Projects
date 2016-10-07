@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <style>
+      body { 
+        font-family: "Helvetica Neue"; 
+        font-weight: 300; 
+      }
+      svg { background: #f9f9f9; }
+      </style>
+  </head>
+  <body>
+    <h1>Project 1: Digging through the NYC Subway Data</h1>
+
+    <p>Part of a series of visualizations exploring the available NYC subway data. Data Source: <a href="http://mta.info">mta.info</a></p>
+
+    <p><i>By: Shashank Shashikant Rao (uni:ss5132)</i></p>
+
+    <h2>1. Competing transit agencies</h2>
+    <p>The subway as we know it today is a merged entity operated by the MTA. Before the MTA takeover in 1940, the subway was a set of multiple independent lines. You can see the split up of subway booths by transit agency below. Read <a href="http://www.nycsubway.org/wiki/Subway_FAQ:_Which_Lines_Were_Former_IRT,_IND,_BMT">more here</a>.</p>
+
+    <div id="chart-1"></div>
+
+    <h2>2. The busy stations</h2>
+    <p>Times Square is by far the busiest station. The next two are-Grand Central 42nd Street, and 34th Street Herald Square.</p>
+    
+    <div id="chart-2"></div>
+
+    <h2>3. What about the station near Columbia University?</h2>
+    <p>Let's look at the ridership for the past 5 years for the 116th street station. Looks like ridership dipped in 2015.</p>
+
+    <div id="chart-3"></div>
+
+    <h2>4. Columbia University Station Entries</h2>
+    <p>Looking closely at the 116th street station for the week of <b>24th September 2016</b>, let's look at when the station is used the most. The usage dips heavily during the weekend!</p>
+
+    <div id="chart-4"></div>
+
+    <!-- This is D3 -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+
+    <!-- Visualization -->
+      <script src="chart-1.js"></script>
+      <script src="chart-2.js"></script>
+      <script src="chart-3.js"></script>
+      <script src="chart-4.js"></script>
+  </body>
+</html>
