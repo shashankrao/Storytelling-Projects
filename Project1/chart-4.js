@@ -20,7 +20,7 @@
     .domain(['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday','Blah'])
     .range([0, Math.PI * 2]);
 
-  var colorScale = d3.scaleLinear().domain([0, 22000]).range(['lightblue', 'pink'])
+  var colorScale = d3.scaleLinear().domain([0, 22000]).range(['#79a8a9', '#e94e77'])
 
   var radialLine = d3.radialLine()
     .angle(function(d) {
@@ -113,6 +113,18 @@
         return d.day;
       })
 
+      svg.append("g")
+      .attr("class", "legendLinear")
+      .attr("transform", "translate(150,330)");
+
+      var legendLinear = d3.legendColor()
+      .shapeWidth(80)
+      .cells(5)
+      .orient('horizontal')
+      .scale(colorScale);
+
+      svg.select(".legendLinear")
+      .call(legendLinear);
 
   }
 })();

@@ -1,5 +1,5 @@
 (function() {
-    var margin = { top: 30, left: 50, right: 30, bottom: 30},
+    var margin = { top: 60, left: 50, right: 60, bottom: 30},
     height = 400 - margin.top - margin.bottom,
     width = 780 - margin.left - margin.right;
 
@@ -13,7 +13,7 @@
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     // Create your scales
-    var xPositionScale = d3.scalePoint().domain([2010,2011,2012,2013,2014,2015]).range([0, width]);
+    var xPositionScale = d3.scalePoint().domain([2010,2011,2012,2013,2014,2015]).range([0, width-130]);
     var yPositionScale = d3.scaleLinear().domain([100000,220000]).range([height, 0])
     var colorScale = d3.scaleOrdinal().domain(["TimesSq-42St","GrandCentral-42St","34St-HeraldSq"])
                                                                         .range(["#54546c","#9baec8","#d9e1e8"])
@@ -83,5 +83,20 @@
         svg.append("g")
             .attr("class", "axis y-axis")
             .call(yAxis);
+
+        svg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate(570,10)");
+
+        var legendOrdinal = d3.legendColor()
+          //d3 symbol creates a path-string, for example
+          //"M0,-8.059274488676564L9.306048591020996,
+          //8.059274488676564 -9.306048591020996,8.059274488676564Z"
+          .shape("path", d3.symbol().type(d3.symbolTriangle).size(150)())
+          .shapePadding(10)
+          .scale(colorScale);
+
+        svg.select(".legendOrdinal")
+        .call(legendOrdinal);
     }
 })();

@@ -16,7 +16,7 @@
 
   var arc = d3.arc()
               .outerRadius(radius)
-              .innerRadius(0);
+              .innerRadius(radius*0.4);
 
   var labelArc = d3.arc()
               .outerRadius(radius*2.4)
@@ -36,13 +36,14 @@
 
     pieContainer = svg.append('g').attr('transform', 'translate(' + width/2 + ',' + height/2 +')');
 
-    var p = pieContainer.selectAll("path")
+    pieContainer.selectAll("path")
        .data(pie(datapoints))
        .enter()
        .append('path')
        .attr("opacity",0.7)
        .attr('d',arc)
        .attr('fill', function (d) { return colorScale(d.data.line);})
+       
 
     pieContainer.selectAll("text")
                 .data(pie(datapoints))
@@ -61,4 +62,10 @@
                       }
 	              })
               }
+
+    legend = svg.append("g")
+    .attr("class","legend")
+    .attr("transform","translate(50,30)")
+    .style("font-size","12px")
+    .call(d3.legend)
 })();
