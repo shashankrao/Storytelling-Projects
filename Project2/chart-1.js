@@ -203,6 +203,13 @@
       .attr("class", "axis y-axis")
       .call(yAxis);
 
+svg.append("text")
+    .attr("text-anchor", "end")
+    .attr("x", width-20)
+    .attr("y", height + 20)
+    .text("Train Stops")
+    .attr("style", "font-size:16px");
+
 
       svg.append("text")
       .attr("style", "font-size:16px")
