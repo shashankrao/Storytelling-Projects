@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+	<head>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico|Voltaire|Noto+Sans" rel="stylesheet">
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<link href="project2.css" rel="stylesheet">
+	    <link href="font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+		<!-- The browser can use non-English-language characters (...kind of) -->
+	    <meta charset="utf-8">
+	    <style>
+	    body { font-family: Helvetica; }
+	    svg { background: #f9f9f9; }
+
+
+.line {
+    width: 30px;
+    height: 30px;
+    border-radius: 75px;
+    font-size: 18px;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    font-family: "neutra-2-display-1", sans-serif;
+    font-weight: 800;
+    float: left;
+    margin-right: 3px;
+    margin-left: auto;
+    margin-bottom: 10px;
+    border: none;
+    padding: 0px;
+    opacity: 0.35;
+    cursor: hand;
+}
+
+.selected {
+	opacity: 1;
+}
+
+.line123 {
+    background-color: #FF3535;
+    stroke: #FF3535;
+}
+
+.line456 {
+    background-color: #019733;
+    stroke: #019733;
+}
+
+.lineACE {
+    background-color: #0F6797;
+    stroke: #0F6797;
+}
+
+.lineBDFM {
+    background-color: #FF9800;
+    stroke: #FF9800;
+}
+
+.lineNQR {
+    background-color: #ffe400;
+    stroke: #ffe400;
+}
+
+.lineJZ {
+    background-color: #986701;
+    stroke: #986701;
+}
+
+.lineG {
+    background-color: #9BCF00;
+    stroke: #9BCF00;
+}
+
+.lineL {
+    background-color: #999999;
+    stroke: #999999;
+}
+
+#subway-display {
+        position: absolute;
+        top: 100px;
+        right: 200px;
+}
+
+	    </style>
+	</head>
+	<body>
+
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="..\index.html">NYC Subway Visualized!</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="..\index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('train.jpg');
+    background-position: center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="post-heading">
+                    <h1>Inequality and New York’s Subway</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <p style="font-family: 'Noto Sans', sans-serif;">New York City has a problem with income inequality. And it’s getting worse—the top of the spectrum is gaining and the bottom is losing. Along individual subway lines, earnings range from poverty to considerable wealth. The interactive infographic here charts these shifts, using data on median household income, from the U.S. Census Bureau, for census tracts with subway stations. </p>
+
+                    <p style="font-family: 'Noto Sans', sans-serif;">Click a line, take a ride:</p>
+                </div>
+			</div>
+
+			<div class="row">
+			<div class="col-md-10 col-md-offset-2">
+		<div class="line line123" id="line1">1</div>
+		<div class="line line123" id="line2">2</div>
+		<div class="line line123" id="line3">3</div>
+		<div class="line line456" id="line4">4</div>
+		<div class="line line456" id="line5">5</div>
+		<div class="line line456" id="line6">6</div>
+		<div class="line lineACE" id="lineA">A</div>
+		<div class="line lineACE" id="lineC">C</div>
+		<div class="line lineACE" id="lineE">E</div>
+		<div class="line lineBDFM" id="lineB">B</div>
+		<div class="line lineBDFM" id="lineD">D</div>
+		<div class="line lineBDFM" id="lineF">F</div>
+		<div class="line lineBDFM" id="lineM">M</div>
+		<div class="line lineNQR" id="lineN">N</div>
+		<div class="line lineNQR" id="lineQ">Q</div>
+		<div class="line lineNQR" id="lineR">R</div>
+		<div class="line lineJZ" id="lineJ">J</div>
+		<div class="line lineJZ" id="lineZ">Z</div>
+		<div class="line lineG" id="lineG">G</div>
+		<div class="line lineL" id="lineL">L</div>
+
+		<br/>
+		<br/><br/>
+
+		<div id="chart-7">
+			
+		<div id="subway-display" style="display:none">
+        	<strong id="location">Currently selected:</strong>
+        	<br/>
+        	<span>Median Income: </span>
+        	<span id="income"></span>
+      	</div>
+
+		</div>
+
+		<p style="font-family: 'Noto Sans', sans-serif;">Visalization inspired by the New Yorker. Source: <a href="http://projects.newyorker.com/story/subway/"> New Yorker Project </a></p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+		
+
+		
+
+		<!-- This is D3, our graphing library -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+		<!-- Now we include our actual visualization -->
+	    <script src="chart-1.js"></script>
+	</body>
+</html>

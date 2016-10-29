@@ -1,16 +1,50 @@
 <!doctype html>
 <html>
   <head>
+  <!-- Bootstrap Core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
       <meta charset="utf-8">
       <style>
       body { 
         font-family: "Helvetica Neue"; 
         font-weight: 300; 
-      }
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
       svg { background: #f9f9f9; }
       </style>
   </head>
   <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project 1</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="..\index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+    <div class="row">
+
     <h1>Project 1: Digging through the NYC Subway Data</h1>
 
     <p>Part of a series of visualizations exploring the available NYC subway data. Data Source: <a href="http://mta.info">mta.info</a></p>
@@ -37,6 +71,8 @@
 
     <div id="chart-4"></div>
 
+</div>
+</div>
     <!-- This is D3 -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.9.0/d3-legend.js"></script>
@@ -46,5 +82,6 @@
       <script src="chart-2.js"></script>
       <script src="chart-3.js"></script>
       <script src="chart-4.js"></script>
+      <script src="bootstrap.min.js"></script>
   </body>
 </html>
